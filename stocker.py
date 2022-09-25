@@ -3,7 +3,7 @@
 import quandl
 import pandas as pd
 import numpy as np
-import fbprophet
+import prophet
 import pytrends
 from pytrends.request import TrendReq
 
@@ -350,7 +350,7 @@ class Stocker():
     def create_model(self):
 
         # Make the model
-        model = fbprophet.Prophet(daily_seasonality=self.daily_seasonality,  
+        model = prophet.Prophet(daily_seasonality=self.daily_seasonality,  
                                   weekly_seasonality=self.weekly_seasonality, 
                                   yearly_seasonality=self.yearly_seasonality,
                                   changepoint_prior_scale=self.changepoint_prior_scale,
